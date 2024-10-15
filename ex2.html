@@ -6,14 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1 id="scoreT"></h1>
 </body>
 <script>
-   let scrore=10;
-   scrore=scrore+5;
-   scrore=scrore-2;
-   
-    console.log("le scrore est de", scrore)
-    
+   let score = 10;  
+   score +=  5;
+   score -=  2;
+
+   console.log("le score est de "+score);  
+   console.log(`le score est ${score}`);
+
+   document.getElementById("scoreT").innerText = score; 
 </script>
+<script src="app.js"></script>
 </html>

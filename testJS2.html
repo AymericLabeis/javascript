@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pair ou Impair</title>
+</head>
+<body>
+    <h1>Vérifier si un nombre est pair ou impair</h1>
+
+    <input type="number" id="numberInput" placeholder="Entrez un nombre">
+    <button onclick="checkEvenOdd()">Vérifier</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkEvenOdd() {
+            let number = document.getElementById('numberInput').value;
+
+            // Vérifier si le nombre est pair ou impair
+            if (number % 2 === 0) {
+                document.getElementById('result').innerText = `Le nombre ${number} est pair.`;
+            } else {
+                document.getElementById('result').innerText = `Le nombre ${number} est impair.`;
+            }
+        }
+    </script>
+</body>
+</html>
