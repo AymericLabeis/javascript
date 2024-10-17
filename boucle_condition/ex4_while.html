@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boucle do while</title>
+</head>
+<body>
+   
+
+    <script>
+        let nombre;
+
+        do {
+             nombre= prompt("entrez un nombre", "0");
+
+            if (nombre < 0 || nombre == 0 ) {
+                console.log("Le nombre est négatif ou null");
+            } 
+            else{
+                alert("le nombre est positif");
+            }
+        } while ( nombre < 0 || isNaN(nombre)); 
+
+      
+    </script>
+</body>
+</html>
