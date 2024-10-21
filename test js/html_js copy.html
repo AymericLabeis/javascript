@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Addition with typeof</title>
+</head>
+<body>
+    <input id="input1" type="number" placeholder="Enter first number">
+    <input id="input2" type="number" placeholder="Enter second number">
+    <button type="submit" onclick="addition()">Valider</button>
+
+    <div>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const input1 = document.getElementById("input1");
+        const input2 = document.getElementById("input2");
+        const resulta = document.getElementById("result");
+
+        function addition() {
+            // Get the values from input fields
+            const value1 = input1.value;
+            const value2 = input2.value;
+
+            // Check if the types are strings (which is the case for input fields even if they are numbers)
+            if (typeof value1 === "string" && typeof value2 === "string") {
+                // Check if both values are not empty and are valid numbers
+                if (value1 !== "" && value2 !== "" && !isNaN(value1) && !isNaN(value2)) {
+                    // Perform the addition after converting to numbers
+                    const resultAdd = Number(value1) + Number(value2);
+                    resulta.innerHTML = "Result = " + resultAdd;
+                } else {
+                    resulta.innerHTML = "Error: Please enter valid numbers in both fields.";
+                }
+            } else {
+                // This block is unlikely to trigger since input values are always strings, but it's here for completeness
+                resulta.innerHTML = "Error: Input types are invalid.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+ let numbers = [2, 8, 15, 9];
+
+let Func = function() {
+    numbers.forEach((number, index) => {
+        let multiply = number * 2;
+        console.log(`Le nombre ${number} à l'index ${index} multiplié par 2 est egal ${multiply}`);
+    });
+};
+Func();
+
+
+let personne = { nom: "Ahmed", age: 25, ville: "Casablanca" }; // Parcourir et afficher chaque valeur
+Object.values(personne).forEach((valeur) => { console.log(valeur); });
+
+
+</script>
+</body>
+
+</html>

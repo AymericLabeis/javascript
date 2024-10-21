@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .containerCalc {
+            width: 60%;
+            border: 4px solid black;
+            border-radius: 25px;
+            margin: 0 auto;
+            background-color: beige;
+        }
+
+        .inputValue {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 1rem;
+        }
+        
+   .inputValue input {
+            width: 65%;
+            font-size: 1.5rem;
+            text-align: right;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: white;
+            height: 40px;
+            padding-right: 10px;
+        }
+
+        .inputValue button ,#delete{
+            width: 12%;
+            font-size: 1.5rem;
+            height: 40px;
+        }
+
+        .NumberOp {
+            width: 100%;
+            display: flex;
+        }
+
+        .nombre1_9 {
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+        }
+
+        .nombre1_9 button {
+            margin: 0.7rem;
+            width: 25%;
+            height: 50px;
+            font-size: 1.5rem;
+        }
+
+        .operateur {
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+        }
+   .operateur button {
+    margin: 0.5rem;
+            width: 35%;
+            height: 40px;
+            font-size: 1rem;
+        }
+  
+     
+        @media screen and (max-width: 767px) {
+            .containerCalc {
+                width: 90%;
+                border-radius: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculatrice</h1>
+
+    <div class="containerCalc">
+        <div class="inputValue">
+            <input type="text" id="inputDisplay" disabled>
+            <button id="delete" value="" type="button"><=</button>
+            <button type="button" id="clearInput">C</button>
+        </div>
+        <div class="NumberOp">
+            <div class="nombre1_9">
+                <button value="1" type="button">1</button>
+                <button value="2" type="button">2</button>
+                <button value="3" type="button">3</button>
+                <button value="4" type="button">4</button>
+                <button value="5" type="button">5</button>
+                <button value="6" type="button">6</button>
+                <button value="7" type="button">7</button>
+                <button value="8" type="button">8</button>
+                <button value="9" type="button">9</button>
+                <button value="0" type="button">0</button>
+                <button value="." type="button">.</button>
+                <button type="button" id="equal">=</button>
+
+
+
+            </div>
+            <div class="operateur">
+                
+                <button value="+" type="button">+</button>
+                <button value="-" type="button">-</button>
+                <button value="*" type="button">*</button>
+                <button value="/" type="button">/</button>
+                <button value="**" type="button">ˆ</button>
+                <button id="cos" value="" type="button" onclick="afficherCos()">cos</button>
+                <button id="sin" value="" type="button" onclick="afficherSin()">sin</button>
+                <button id="pi" value="" type="button" onclick="AfficherPi()">π</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('inputDisplay');
+        const clearInput = document.getElementById('clearInput');
+        const equal = document.getElementById('equal');
+        const buttons = document.querySelectorAll('button');
+        const del = document.getElementById('delete');
+        const pi = document.getElementById('pi');
+        const cos = document.getElementById('cos')
+        const sin = document.getElementById('sin')
+        let total = [];
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (button === clearInput) {
+                    total = [];
+                    display.value = [];
+                } else if (button === equal) {
+                    try {
+                        total = eval(total);
+                        display.value = total;
+                    } catch (error) {
+                        display.value = "Erreur";
+                    }
+                } else if (button === del) {
+                    total = total.slice(0, -1);
+                    display.value = total;
+                } else {
+                    total += button.value;
+                    display.value = total;
+                }
+            });
+        });;
+        function AfficherPi() {
+            const calpi = Math.PI;
+            total = calpi;
+        }
+        function afficherCos() {
+            const angleEnRadians = parseFloat(total) * (Math.PI / 180);
+            const calCos = Math.cos(angleEnRadians);
+            total = calCos;
+        }
+        function afficherSin() {
+            const angleEnRadians = parseFloat(total) * (Math.PI / 180);
+            const calSin = Math.sin(angleEnRadians);
+            total = calSin;
+        }
+
+
+    </script>
+</body>
+
+</html>

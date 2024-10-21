@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Bonjour</h1>
+    <p class="parag1">paragraphe 1</p>
+    <p class="parag1">paragraphe 2</p>
+    <p>paragraphe 3</p>
+    <a href="https://www.youtube.com/" alt="">link</a>
+    <input type="text" value="test" id="input1">
+    <img id="img" src="" alt="" width="200px" height="200px">
+    <button onclick="changePhoto()">change</button>
+
+
+
+    <script>
+    var title = document.getElementById('title');
+    console.log(title);
+
+    var paragraphe= document.getElementsByClassName('parag1');
+    console.log(paragraphe);
+
+    var tags = document.getElementsByTagName('p');
+    console.log(tags);
+
+    var query=document.querySelector('#title');
+    console.log(query);
+
+    var queryAll=document.querySelectorAll('.parag1');
+    console.log(queryAll);
+
+    var input1=document.getElementById("input1");
+    
+
+//modif-------------------------------------------------
+title.innerHTML="Bonsoir";
+var input1Value= input1.value;
+console.log("input1 value = "+input1Value);
+
+
+var img=document.getElementById("img");
+
+function changePhoto(){
+var imgModif=img.setAttribute('src','GitHub.png');
+}
+
+    </script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Addition</title>
+</head>
+
+<body>
+   <form action="">
+        <input id="input1"  placeholder="first number">
+        <input id="input2"  placeholder="second number">
+        <button type="submit" onclick="addition(event)">Valider</button>
+    </form>
+
+    <div>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const input1 = document.getElementById("input1");
+        const input2 = document.getElementById("input2");
+        const resulta = document.getElementById("result");
+
+        function addition(event) {
+            event.preventDefault()
+            const num1 = Number(input1.value);
+            const num2 = Number(input2.value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resulta.innerHTML = "Entrez un nombre";
+            } else {
+                const resultAdd = num1 + num2;
+                resulta.innerHTML = "Resultat = " + resultAdd;
+            }
+        }
+    </script>
+</body>
+
+</html>
