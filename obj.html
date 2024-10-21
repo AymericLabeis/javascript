@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let person = {
+        nom: 'john',
+        prenom: 'DOE',
+        age: 35,
+
+    }
+    console.log(person)
+    console.log("le nom est", person.nom)
+    console.log("l'age est", person.age)
+    person.age=55;
+    console.log("l'age apres est", person.age)
+    delete person.age
+    console.log("delete age", person)
+    console.log("test si existe" , "age" in person)
+
+
+
+</script>
+
+<script>
+    let arr= new Array(3)
+    console.log(arr);
+    let arr2=[];
+    console.log(arr2);
+    let fruit=["apple","orange","Plum"];
+    alert(fruit[0]);
+    alert(fruit[1]);
+    alert(fruit[2]);
+</script>
+</html>

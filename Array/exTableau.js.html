@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tableau js</title>
+    <style>
+        *,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+table {
+  margin: 20px auto;
+  font-family: spicy rice;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+
+
+th {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+  text-decoration: underline;
+  
+}
+
+td {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+    </style>
+</head>
+<body>
+    
+
+    <script>
+       let nom=[]
+       nom.push('Aymeric','Moussa','Sarah');
+       console.log(nom);
+  /*  let testpop = nom.pop();
+       console.log(testpop);*/
+
+let testshift= nom.shift();
+console.log("test shift:",testshift);
+console.log(nom);
+let testunshift= nom.unshift('test');
+console.log("test unshift:",testshift);
+console.log(nom);
+
+   </script>
+
+   <script>
+let fruits = ['pomme', 'banane', 'orange'];
+let result = fruits.join();
+console.log(result); 
+
+
+
+let fruits1 = ['pomme', 'banane', 'orange', 'kiwi'];
+let elementsDel = fruits1.splice(0, 2, "test");
+console.log(fruits1);  
+console.log("new tableau", elementsDel); 
+
+const test = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = test.pop();
+console.log(fruit);
+
+const frui = ["Banana", "Orange", "Apple", "Mango"];
+let fr = frui.shift();
+console.log(frui,fr);
+
+   </script>
+</body>
+</html>
+
+
