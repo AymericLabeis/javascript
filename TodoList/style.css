@@ -1,0 +1,171 @@
+/* Applique à tous les éléments une box-sizing harmonieuse et supprime les marges et paddings par défaut */
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(66, 66, 66);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px; 
+    color: white;
+    font-size: 50px; 
+}
+
+
+.inputSearch {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputSearch input {
+    width: 400px;
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.inputSearch button {
+    width: 80px;
+    margin-left: 20px;
+    padding: 2px;
+    
+    background-color: #1e252c;
+    background-color: #57738f; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.inputSearch button:hover {
+   
+    background-color: #4f677e; 
+}
+
+
+.containerToDO {
+    margin: 20px auto; 
+    width: 800px;
+    border-radius: 5px; 
+}
+
+
+.liste {
+    list-style-type: none; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+.liste li {
+    padding: 4px 10px; 
+    margin: 10px ;
+    border-radius: 5px;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background-color: #ffffff0e;
+    
+}
+li input {
+    width: 30px;
+    height: 30px;
+    border:2px solid black;
+    margin-right:10px;
+}
+li.finDeTache span {
+    text-decoration: line-through;
+}
+.span-text {
+    flex-grow: 1; 
+    text-align: left; 
+}
+
+.liste li button {
+    justify-content: flex-end;
+    margin-left: 10px;
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color:rgb(31, 82, 223); 
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.liste li button:nth-child(3) {
+    
+    background-color: #ff4d4d; 
+}
+
+.liste li button:hover {
+    opacity: 0.8; 
+}
+.modal {
+    display: none;
+    flex-direction: column; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    padding: 20px;
+    border: 2px solid #dfcfcf;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px; 
+    z-index: 1000; 
+    background-color: #1e252c;
+}
+.modal h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 30px;
+    
+}
+.modal input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+    
+    border-radius: 5px;
+  
+}
+.modalButton {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around; 
+}
+.modalButton button {
+    width: 90px;
+    padding: 8px;
+    font-size: 16px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+ 
+}
+.green{
+    background-color: #28a745;
+}
+.red{
+    background-color:#ff4d4d;
+}
+
+.modalButton button:hover {
+    opacity: 0.8; 
+}

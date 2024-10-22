@@ -1,0 +1,32 @@
+modal.style.display === 'none'
+            const newTache = inputModal.value.trim();
+            if (newTache === "") {
+                alert("Veuillez entrer une tâche.");
+                return;
+            }
+            const newLi = document.createElement('li');
+            const newSpan = document.createElement('span');
+            const deleteButton = document.createElement('button');
+            const editButton = document.createElement('button');
+
+            newSpan.className = 'span-text';
+            newSpan.textContent = newTache;
+            deleteButton.textContent = 'supr';
+
+            deleteButton.onclick = function () {
+                newLi.remove();
+            };
+
+            editButton.textContent = 'modif';
+            editButton.onclick = function () {
+                inputModal.value = newTache;
+                cancelModal();
+            };
+            newLi.appendChild(newSpan);
+            newLi.appendChild(deleteButton);
+            newLi.appendChild(editButton);
+
+            const liste = document.querySelector('.liste');
+            liste.appendChild(newLi);
+
+            cancelModal();

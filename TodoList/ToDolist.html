@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <h1>To do list</h1>
+    <div class="inputSearch">
+        <input id="inputTodo" type="text" placeholder="rechercher une tache" autofocus>  
+        <button onclick="addModal()" type="submit">+</button>
+    </div>
+    <div class="containerToDO">
+        <hr style="border:2px solid rgb(255, 255, 255); margin-bottom: 20px;">
+        <ul class="liste">
+        </ul>
+    </div>
+    <div class="modal">
+        <h2>Nouvelle tâche</h2>
+        <input id="inputModal" type="text" autofocus>
+        <div class="modalButton">
+            <button class="red"  onclick="cancelModal()">cancel</button>
+            <button class="green" onclick="addTache()">valider</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
