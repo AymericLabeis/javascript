@@ -9,6 +9,7 @@
         h1 {
             text-align: center;
         }
+
         button {
             border: 1px solid black;
             border-radius: 5px;
@@ -47,8 +48,7 @@
             color: black;
         }
 
-        .inputValue button,
-        #delete {
+        .inputValue button {
             width: 12%;
             font-size: 1.5rem;
             height: 40px;
@@ -85,6 +85,9 @@
             width: 30%;
         }
 
+        /* .operateur button:nth-child(-n+4) {
+        background-color: #100853;  
+         }*/
         .operateur button {
             margin: 0.5rem;
             width: 35%;
@@ -125,21 +128,18 @@
                 <button value="9" type="button">9</button>
                 <button value="0" type="button">0</button>
                 <button value="." type="button">.</button>
-                <button type="button" id="equal" onclick="calculateResult()">=</button>
-
-
-
+                <button type="button" id="equal">=</button>
             </div>
             <div class="operateur">
-
                 <button value="+" type="button">+</button>
                 <button value="-" type="button">-</button>
                 <button value="*" type="button">*</button>
                 <button value="/" type="button">/</button>
                 <button value="**" type="button">ˆ</button>
+                <button id="pi" value="" type="button" onclick="AfficherPi()">π</button>
                 <button id="cos" value="" type="button" onclick="afficherCos()">cos</button>
                 <button id="sin" value="" type="button" onclick="afficherSin()">sin</button>
-                <button id="pi" value="" type="button" onclick="AfficherPi()">π</button>
+                
             </div>
         </div>
     </div>
@@ -158,16 +158,14 @@
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 if (button === clearInput) {
-                    total =[];
+                    total = [];
                     display.value = [];
                 } else if (button === equal) {
                     try {
-                      
-                        total = eval(display.value) ;
-                        display.value=total;
-                        total=[];
+                        total = eval(display.value);
+                        display.value = total;
                     } catch (error) {
-                        display.value = "Erreur";
+                        display.value = "Erreur de calcul";
                     }
                 } else if (button === del) {
                     total = total.slice(0, -1);
@@ -183,7 +181,7 @@
             pi.value = calpi
         }
         function afficherCos() {
-            const angleEnRadians = parseFloat(total) * (Math.PI / 180);
+            const angleEnRadians = parseFloat(eval(total)) * (Math.PI / 180);
             const calCos = Math.cos(angleEnRadians);
             total = calCos;
         }
@@ -192,8 +190,9 @@
             const calSin = Math.sin(angleEnRadians);
             total = calSin;
         }
-        
-
+        equal.addEventListener('click', () => {
+            total = [];
+        });
     </script>
 </body>
 
