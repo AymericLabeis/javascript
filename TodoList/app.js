@@ -1,6 +1,9 @@
 const inputTodo = document.getElementById('inputTodo');
 const inputModal = document.getElementById('inputModal');
-const modal = document.querySelector('.modal');
+const inputModalEdit = document.getElementById('inputModalEdit');
+const modal = document.getElementById('modal');
+const modalEdit = document.getElementById('modalEdit');
+let currentTache = null;   
 
 
 function addModal() {
@@ -17,11 +20,11 @@ function addTache() {
     const newTache = inputModal.value.trim();
     const liste = document.querySelector('.liste');
     const newLi = document.createElement('li');
+    const input = document.createElement('input');
     const newText = document.createElement('span');
     const deleteButton = document.createElement('button');
     const editButton = document.createElement('button');
-    const input = document.createElement('input');
-
+    
 
     if (newTache === "") {
         alert("Veuillez entrer une tâche.");
@@ -44,9 +47,9 @@ function addTache() {
     // Bouton modifier
     editButton.textContent = 'Modif';
     editButton.onclick = function () {
-        modal.style.display = 'block';
-        inputModal.value = newText.textContent;
-        newLi.remove();
+        modalEdit.style.display = 'block';
+        inputModalEdit.value = newText.textContent; 
+        currentTache = newText; 
     };
 
     newLi.appendChild(input);
@@ -57,12 +60,19 @@ function addTache() {
 
     cancelModal(); 
 }
-function tacheFaite(e){
-    e.target.parentNode.classList.toggle('finDeTache')
-  }
-// Recherche de tâches
-inputTodo.addEventListener('input', recherche);
 
+function editTache() {
+    if (currentTache) {
+        currentTache.textContent = inputModalEdit.value.trim();  
+        modalEdit.style.display = 'none'; 
+    }
+}
+
+function tacheFaite(e) {
+    e.target.parentNode.classList.toggle('finDeTache');
+}
+
+inputTodo.addEventListener('input', recherche);
 function recherche() {
     const filter = inputTodo.value.trim().toUpperCase();
     const allLi = document.querySelectorAll('.liste li');

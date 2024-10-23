@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do List</title>
     <link rel="stylesheet" href="style.css">
     <style>
 
@@ -23,14 +23,22 @@
         <ul class="liste">
         </ul>
     </div>
-    <div class="modal">
+    <div id="modal" class="modal">
         <h2>Nouvelle tâche</h2>
         <input id="inputModal" type="text" autofocus>
         <div class="modalButton">
             <button class="red"  onclick="cancelModal()">cancel</button>
-            <button class="green" onclick="addTache()">valider</button>
+            <button class="blue" onclick="addTache()">valider</button>
         </div>
     </div>
+    <div id="modalEdit" class="modal">
+        <h2>Edit tâche</h2>
+        <input id="inputModalEdit" type="text" autofocus>
+        <div class="modalButton">
+            <button class="blue" onclick="editTache()">Modifier</button>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 
